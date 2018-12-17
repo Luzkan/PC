@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="caleOkno" prefHeight="720.0" prefWidth="1388.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luzkan.PaintKontroler">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Plik">
+          <items>
+            <MenuItem fx:id="nowyMenu" mnemonicParsing="false" onAction="#nowyKlik" text="Nowy" />
+            <MenuItem fx:id="otworzMenu" mnemonicParsing="false" onAction="#otworzKlik" text="Otwórz" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="zapiszMenu" mnemonicParsing="false" onAction="#zapiszKlik" text="Zapisz" />
+            <MenuItem fx:id="zapiszJakoMenu" mnemonicParsing="false" onAction="#zapiszJakoKlik" text="Zapisz jako..." />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="wyjdzMenu" mnemonicParsing="false" onAction="#wyjdzKlik" text="Wyjdź" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Pomoc">
+          <items>
+                  <MenuItem fx:id="pomocMenu" mnemonicParsing="false" onAction="#pomocKlik" text="Pomoc" />
+                  <MenuItem fx:id="ficzeryMenu" mnemonicParsing="false" onAction="#ficzeryKlik" text="Ficzery" />
+                  <MenuItem fx:id="bugiMenu" mnemonicParsing="false" onAction="#bugiKlik" text="Bugi" />
+            <MenuItem fx:id="oProgramieMenu" mnemonicParsing="false" onAction="#oProgramieKlik" text="O Programie" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane fx:id="tuRysuje" layoutX="108.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Pane>
+            <Pane fx:id="lewyPanel" prefHeight="720.0" prefWidth="108.0">
+               <children>
+                  <Button fx:id="zaznaczenieBtn" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#zaznaczenieKlik" prefHeight="25.0" prefWidth="84.0" text="Zaznaczenie" />
+                  <Button fx:id="olowekBtn" layoutX="12.0" layoutY="45.0" mnemonicParsing="false" onAction="#olowekKlik" prefHeight="25.0" prefWidth="84.0" text="Ołówek" />
+                  <Button fx:id="prostokatBtn" layoutX="12.0" layoutY="76.0" mnemonicParsing="false" onAction="#prostokatKlik" prefHeight="25.0" prefWidth="84.0" text="Prostokąt" />
+                  <Button fx:id="koloBtn" layoutX="12.0" layoutY="108.0" mnemonicParsing="false" onAction="#koloKlik" prefHeight="25.0" prefWidth="84.0" text="Koło" />
+                  <Button fx:id="wielokatBtn" layoutX="12.0" layoutY="141.0" mnemonicParsing="false" onAction="#wielokatKlik" prefHeight="25.0" prefWidth="84.0" text="Wielokąt" />
+                  <Separator layoutX="12.0" layoutY="183.0" prefHeight="3.0" prefWidth="84.0" />
+                  <ColorPicker fx:id="wyborKoloru" layoutX="12.0" layoutY="200.0" prefHeight="25.0" prefWidth="84.0">
+                       <value>
+                           <Color blue="0.0" green="0.0" red="0.0" />
+                       </value>
+                   </ColorPicker>
+                  <Button fx:id="kolorujBtn" layoutX="11.0" layoutY="233.0" mnemonicParsing="false" onAction="#kolorujKlik" prefHeight="25.0" prefWidth="84.0" text="Koloruj" />
+                  <Separator layoutX="11.0" layoutY="274.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Button fx:id="usunBtn" layoutX="11.0" layoutY="289.0" mnemonicParsing="false" onAction="#usunKlik" prefHeight="25.0" prefWidth="84.0" text="Usuń" />
+                  <Separator layoutX="106.0" layoutY="14.0" orientation="VERTICAL" prefHeight="698.0" prefWidth="6.0" />
+                  <Separator layoutX="11.0" layoutY="331.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Text layoutX="30.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X:" />
+                  <Text layoutX="30.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y:" />
+                  <Text layoutX="45.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="37.13669168949127" fx:id="xLokacja" />
+                  <Text fx:id="yLokacja" layoutX="45.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="37.13671875" />
+                  <Text layoutX="14.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Współ. Kursora" wrappingWidth="84.00001335144043" fx:id="xLokacja1" />
+               </children>
+            </Pane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
