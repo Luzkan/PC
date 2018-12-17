@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="wholeWindow" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luzkan.kolorkiController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="saveMenu" mnemonicParsing="false" onAction="#saveClick" text="Save" />
+            <MenuItem fx:id="saveAsMenu" mnemonicParsing="false" onAction="#saveAsClick" text="Save As..." />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="closeMenu" mnemonicParsing="false" onAction="#closeClick" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+                  <MenuItem fx:id="helpMenu" mnemonicParsing="false" onAction="#helpClick" text="Help" />
+                  <MenuItem fx:id="featuresMenu" mnemonicParsing="false" onAction="#featuresClick" text="Features" />
+                  <MenuItem fx:id="bugsMenu" mnemonicParsing="false" onAction="#bugsClick" text="Bugs" />
+            <MenuItem fx:id="aboutMenu" mnemonicParsing="false" onAction="#aboutClick" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane fx:id="gridHere" layoutX="108.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            </Pane>
+            <Pane fx:id="leftPanel" prefHeight="501.0" prefWidth="108.0">
+               <children>
+                  <Separator layoutX="106.0" orientation="VERTICAL" prefHeight="502.0" prefWidth="9.0" />
+                  <Text layoutX="31.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Size" wrappingWidth="50.40003514289856" />
+                  <Text layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X:" />
+                  <TextField fx:id="sizeX" layoutX="34.0" layoutY="35.0" onAction="#valueX" prefHeight="17.0" prefWidth="60.0" text="1" />
+                  <Text layoutX="14.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y:" />
+                  <TextField fx:id="sizeY" layoutX="34.0" layoutY="62.0" onAction="#valueY" prefHeight="17.0" prefWidth="60.0" text="1" />
+                  <Separator layoutX="14.0" layoutY="97.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Text layoutX="28.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Block Size" wrappingWidth="59.99999415874481" />
+                  <TextField fx:id="sizeBlock" layoutX="25.0" layoutY="126.0" onAction="#valueSize" prefHeight="17.0" prefWidth="60.0" text="1" />
+                  <Separator layoutX="13.0" layoutY="162.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Text layoutX="25.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency" wrappingWidth="60.00002121925354" />
+                  <Slider fx:id="frequencySlider" layoutX="7.0" layoutY="193.0" majorTickUnit="2998.0" max="3000.0" min="1.0" minorTickCount="0" onMouseDragged="#sliderValueChangeFreq" prefHeight="16.0" prefWidth="92.0" showTickLabels="true" value="2000.0" />
+                  <Separator layoutX="10.0" layoutY="228.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Text layoutX="25.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Probability" wrappingWidth="60.00002121925354" />
+                  <Slider fx:id="probabilitySlider" layoutX="9.0" layoutY="257.0" majorTickUnit="100.0" onMouseDragged="#sliderValueChangeProb" prefHeight="16.0" prefWidth="92.0" showTickLabels="true" value="50.0" />
+                  <Separator layoutX="13.0" layoutY="291.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Button layoutX="11.0" layoutY="302.0" mnemonicParsing="false" onAction="#allAtOnceClick" prefHeight="25.0" prefWidth="84.0" text="All at Once" />
+                  <Button layoutX="11.0" layoutY="334.0" mnemonicParsing="false" onAction="#unbindedClick" prefHeight="25.0" prefWidth="84.0" text="Separately" />
+                  <Separator layoutX="11.0" layoutY="370.0" prefHeight="3.0" prefWidth="84.0" />
+                  <Button layoutX="10.0" layoutY="382.0" mnemonicParsing="false" onAction="#stopClick" prefHeight="25.0" prefWidth="84.0" text="Stop" />
+                  <Button layoutX="11.0" layoutY="413.0" mnemonicParsing="false" onAction="#stopclearClick" prefHeight="25.0" prefWidth="84.0" text="Clear &amp; Stop" />
+                  <Text fx:id="sliderValue" layoutX="10.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Slider Value" textAlignment="CENTER" wrappingWidth="83.99998641014099" />
+               </children>
+            </Pane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
